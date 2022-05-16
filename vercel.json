@@ -8,8 +8,13 @@
     ],
     "routes" : [
         {
+<<<<<<< HEAD
             "src" : "/(.*)",
             "dest" : "/"
+=======
+            "src" : "/.*",
+            "dest" : "index.js"
+>>>>>>> 2ec87e9d5e69aefc4efce79630249af0e7564867
         }
     ]
 }
