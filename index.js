@@ -24,12 +24,12 @@ app.use(PengunjungRoute);
 app.use(DaftarbukuRoute);
 app.use(PinjambukuRoute);
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(__dirname, './frontend/build')));
+const _dirname = path.dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.join(_dirname, './frontend/build')));
 
 app.get("*", function (_, res) {
     res.sendFile(
-        path.join(__dirname,'./frontend/build/index.html'),
+        path.join(_dirname,'./frontend/build/index.html'),
         function (erorr) {
             if (erorr) {
                 res.status(500).send(erorr);
