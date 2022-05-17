@@ -5,22 +5,19 @@ import React,{useState,} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-const AddPinjambuku = () => {
-    const [tanggalpinjam, setTanggalpinjam] = useState("");
+const AddKembalibuku = () => {
     const [tanggalkembali, setTanggakembali] = useState("");
-    const [kodebuku, setKodebuku] = useState("");
     const [judulbuku, setJdudulbuku] = useState("");
     const [peminjam, setPeminjam] = useState("");
-    const [nohppeminjam, setNohppeminjam] = useState("");
     const navigate = useNavigate();
 
-    const savePinjambuku = async(e) => {
+    const saveKembalibuku = async(e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/pinjambukus', {
-                tanggalpinjam,tanggalkembali,kodebuku,judulbuku,peminjam,nohppeminjam
+            await axios.post('http://localhost:5000/kembalibukus', {
+                tanggalkembali,judulbuku,peminjam
             });
-            navigate("/pinjambuku");
+            navigate("/kembalibuku");
         } catch (error) {
             console.log(error)
         }
@@ -31,18 +28,8 @@ const AddPinjambuku = () => {
         <Header/>
        <Sidebar/>
 <div class=" pt-5">
-<Link to="/pinjambuku" className='btn btn-secondary mt-3 mb-3'> Kembali</Link>
-<form onSubmit={savePinjambuku}>
-  <div class="form-group">
-    <label>Tanggal Pinjam</label>
-    <input 
-    type="field" 
-    class="form-control" 
-    value={tanggalpinjam} 
-    onChange={(e)=> setTanggalpinjam(e.target.value)}
-    placeholder="Tanggal Pinjam"
-    />
-  </div>
+<Link to="/kembalibuku" className='btn btn-secondary mt-3 mb-3'> Kembali</Link>
+<form onSubmit={saveKembalibuku}>
   <div class="form-group">
     <label>Tanggal Pengembalian</label>
     <input 
@@ -51,16 +38,6 @@ const AddPinjambuku = () => {
     value={tanggalkembali} 
     onChange={(e)=> setTanggakembali(e.target.value)}
     placeholder="Tanggal Pengembalian"
-    />
-  </div>
-  <div class="form-group">
-    <label>Kode Buku</label>
-    <input 
-    type="field" 
-    class="form-control" 
-    value={kodebuku} 
-    onChange={(e)=> setKodebuku(e.target.value)}
-    placeholder="Kode Buku"
     />
   </div>
   <div class="form-group">
@@ -83,16 +60,6 @@ const AddPinjambuku = () => {
     placeholder="Nama Peminjam"
     />
   </div>
-  <div class="form-group">
-    <label>No Hp Peminjam</label>
-    <input 
-    type="field" 
-    class="form-control" 
-    value={nohppeminjam} 
-    onChange={(e)=> setNohppeminjam(e.target.value)}
-    placeholder="No Hp Peminjam"
-    />
-  </div>
   <button type="submit" class="btn btn-primary mt-3">Submit</button>
 </form>
     </div>
@@ -100,4 +67,4 @@ const AddPinjambuku = () => {
   )
 }
 
-export default AddPinjambuku
+export default AddKembalibuku

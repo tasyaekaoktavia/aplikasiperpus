@@ -18,7 +18,7 @@ const AddPengunjung = () => {
             await axios.post('http://localhost:5000/pengunjungs', {
                 name,nohp,jeniskelamin,alamat
             });
-            navigate("/");
+            navigate("/pengunjung");
         } catch (error) {
             console.log(error)
         }

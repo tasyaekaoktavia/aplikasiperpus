@@ -15,6 +15,10 @@ import Pinjambuku from './component/Pinjambuku';
 import AddPinjambuku from './component/AddPinjambuku';
 import EditPinjambuku from './component/EditPinjambuku';
 
+import Kembalibuku from './component/Kembalibuku';
+import AddKembalibuku from './component/AddKembalibuku';
+import EditKembalibuku from './component/EditKembalibuku';
+
 import './style.css';
 import './main.js';
 import './fontawesome/css/all.min.css';
@@ -36,6 +40,11 @@ function App(){
                <Route path='/pinjambuku' element={<Pinjambuku/>}/>
                <Route path='/pinjambuku/addpinjambuku' element={<AddPinjambuku/>}/>
                <Route path='/pinjambuku/editpinjambuku/:id' element={<EditPinjambuku/>}/>
+
+               <Route path='/kembalibuku' element={<Kembalibuku/>}/>
+               <Route path='/kembalibuku/addkembalibuku' element={<AddKembalibuku/>}/>
+               <Route path='/kembalibuku/editkembalibuku/:id' element={<EditKembalibuku/>}/>
+
              </Routes>
             </div>
             </BrowserRouter>

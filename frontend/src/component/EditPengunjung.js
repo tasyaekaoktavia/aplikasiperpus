@@ -35,7 +35,7 @@ const EditPengunjung = () => {
             await axios.patch(`http://localhost:5000/pengunjungs/${id}`, {
                 name,nohp,jeniskelamin,alamat
             });
-            navigate("/");
+            navigate("/pengunjung");
         } catch (error) {
             console.log(error)
         }

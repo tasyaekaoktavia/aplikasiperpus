@@ -31,6 +31,10 @@ const Sidebar = () => {
                 <i className="fa-solid fa-handshake nav_icon" />
                 <span className="nav_name">Peminjaman Buku</span>
               </a>
+              <a href="/kembalibuku" className="nav_link">
+                <i className="fa-solid fa-handshake nav_icon" />
+                <span className="nav_name">Pengembalian Buku</span>
+              </a>
             </div>
           </div>
         </nav>
